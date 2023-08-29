@@ -1,0 +1,180 @@
+{
+  "libros": [
+    {
+      "id": 1,
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "lugar_de_impresion": "Londres",
+      "fecha_de_impresion": "8 de junio de 1949",
+      "editorial": "Secker & Warburg",
+      "coleccion": "Ficción distópica",
+      "precio": 1000,
+      "ventas": 0,
+      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg",
+      "comentarios": [
+        {
+          "usuario": "LectorA",
+          "comentario": "Una novela que nos hace reflexionar sobre la vigilancia y el control estatal."
+        },
+        {
+          "usuario": "BibliophileB",
+          "comentario": "Orwell teje una historia impactante con una advertencia atemporal."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Cien años de soledad",
+      "autor": "Gabriel García Márquez",
+      "lugar_de_impresion": "Buenos Aires",
+      "fecha_de_impresion": "30 de mayo de 1967",
+      "editorial": "Sudamericana",
+      "coleccion": "Realismo mágico",
+      "precio": 1500,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREHZQt5Iw9JqXNYsgXx4Vm1xKugBvlcBUjnJ_WvAofh1R6lkiYjmbg44TQsozCFWIgGrA&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorC",
+          "comentario": "Una obra maestra que nos transporta a un mundo lleno de magia y realismo único."
+        },
+        {
+          "usuario": "BibliophileD",
+          "comentario": "La prosa de García Márquez es simplemente hipnótica. Un libro que deja huella."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Matar a un ruiseñor",
+      "autor": "Harper Lee",
+      "lugar_de_impresion": "Nueva York",
+      "fecha_de_impresion": "11 de julio de 1960",
+      "editorial": "J. B. Lippincott & Co.",
+      "coleccion": "Novela contemporánea",
+      "precio": 3000,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDHyjTHPXpo-EG3phz8F9y6Q1TORRTuqucmh8xNeeNGKQjW_HNi362vvg7bbaMUo543I0&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorE",
+          "comentario": "Una historia conmovedora que aborda temas de racismo y moralidad."
+        },
+        {
+          "usuario": "BibliophileF",
+          "comentario": "Un libro que perdura en el tiempo por su mensaje poderoso y personajes entrañables."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Don Quijote de la Mancha",
+      "autor": "Miguel de Cervantes",
+      "lugar_de_impresion": "Madrid",
+      "fecha_de_impresion": "16 de enero de 1605",
+      "editorial": "Francisco de Robles",
+      "coleccion": "Novela de caballerías",
+      "precio": 1800,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgtsMMSI_4qO8nsLoyk-QYWb1omzEO14LvvGFU2rjTaOC9SriBzpG5Tm9i-_LKJZv4WIE&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorG",
+          "comentario": "Una obra clásica que parodia y celebra a la vez las novelas de caballerías."
+        },
+        {
+          "usuario": "BibliophileH",
+          "comentario": "Cervantes dio vida a personajes inolvidables en una narración llena de humor y profundidad."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "Crimen y castigo",
+      "autor": "Fyodor Dostoevsky",
+      "lugar_de_impresion": "San Petersburgo",
+      "fecha_de_impresion": "1866",
+      "editorial": "Editorial El Mensajero Ruso",
+      "coleccion": "Novela clásica",
+      "precio": 3500,
+      "ventas": 10,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG6JFcVRBe25_WTmcRCy-_RLA_8TsicQFplQ&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorI",
+          "comentario": "Una exploración profunda de la psicología humana y las consecuencias de la culpa."
+        },
+        {
+          "usuario": "BibliophileJ",
+          "comentario": "Dostoevsky nos sumerge en la mente de un criminal con una narrativa magistral."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titulo": "Orgullo y prejuicio",
+      "autor": "Jane Austen",
+      "lugar_de_impresion": "Londres",
+      "fecha_de_impresion": "28 de enero de 1813",
+      "editorial": "T. Egerton, Whitehall",
+      "coleccion": "Novela romántica",
+      "precio": 2000,
+      "ventas": 20,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGtg7aMSYDUecGIdsxXNpd6gIXsxK8N3CAcw&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorK",
+          "comentario": "Una historia de amor clásica con personajes memorables y una sutil crítica social."
+        },
+        {
+          "usuario": "BibliophileL",
+          "comentario": "La pluma de Austen nos lleva a la Inglaterra del siglo XIX con elegancia y humor."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titulo": "Moby-Dick",
+      "autor": "Herman Melville",
+      "lugar_de_impresion": "Nueva York",
+      "fecha_de_impresion": "18 de octubre de 1851",
+      "editorial": "Harper & Brothers",
+      "coleccion": "Novela clásica",
+      "precio": 1200,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVZM9E574niIwAAKvSrLPdnXZYB3Xj06ho7A&usqp=CAU",
+      "comentarios": [
+        {
+          "usuario": "LectorM",
+          "comentario": "Una epopeya marina que explora la obsesión humana y la relación con la naturaleza."
+        },
+        {
+          "usuario": "BibliophileN",
+          "comentario": "Melville teje una historia magistral con metáforas y simbolismo maravillosos."
+        }
+      ]
+    },
+    {
+      "titulo": "En busca del tiempo perdido",
+      "autor": "Marcel Proust",
+      "lugar_de_impresion": "París",
+      "fecha_de_impresion": "1913-1927",
+      "editorial": "Grasset",
+      "coleccion": "Novela modernista",
+      "precio": 4100,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREf9oIhGmrtN8xzfxSMbIe6M-oE6b0ZxbE8A&usqp=CAU",
+      "id": 8,
+            "comentarios": [
+        {
+          "usuario": "LectorO",
+          "comentario": "Una epopeya marina que explora la obsesión humana y la relación con la naturaleza."
+        },
+        {
+          "usuario": "BibliophileP",
+          "comentario": "Melville teje una historia magistral con metáforas y simbolismo maravillosos."
+        }
+      ]
+    }
+  ]
+}
