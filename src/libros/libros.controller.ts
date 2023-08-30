@@ -1,18 +1,20 @@
-import { Controller,Get,Param, Post, Body , Delete, Put} from '@nestjs/common';
+import { Controller,Get,Param, Post, Body , Delete, Put, Query} from '@nestjs/common';
 import { LibrosService } from './libros.service';
 import { Libro } from 'src/libro/libro';
+
 
 @Controller('libros')
 export class LibrosController {
     constructor(private readonly librosService: LibrosService) {}
 
     @Get()
-    getLibros(): Promise<Libro[]>{
-        return this.librosService.getLibros()
+      getLibros(@Query ("libro") titulo:string): Promise<Libro[]>{
+        if(!titulo) return this.librosService.getLibros();
+        return this.librosService.getLibroPorTitulo(titulo)
     }
 
     @Get("/:id")
-    getLibrosById(@Param("id") id:number): Promise <Libro>{
+    getLibrosById( @Param("id") id:number): Promise <Libro>{
         return this.librosService.getLibroById(id)
     }
 

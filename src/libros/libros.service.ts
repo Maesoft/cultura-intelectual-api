@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Libro } from 'src/libro/libro';
-import { parseArgs } from 'util';
+import { NotFoundException } from '@nestjs/common/exceptions';
 const BASE_URL = 'http://localhost:3030/libros/'
 
 @Injectable()
@@ -12,12 +12,21 @@ export class LibrosService {
         const parsed = await res.json()
         return parsed
     }
+     //Muestra el libro por llamada
+     async getLibroPorTitulo (titulo:string) : Promise<Libro[]>{
+        const res = await fetch(BASE_URL);
+        const parsed = await res.json()
+        const libroEncontrado = parsed.find(libro => libro.titulo.toLocaleLowerCase() === titulo.toLocaleLowerCase());
+       if(libroEncontrado) return libroEncontrado;
+       throw new NotFoundException(`Titulo no encontrado`)
+     }
 
     //Muestra el libro por id
     async getLibroById(id:number): Promise<Libro>{
         const res = await fetch(BASE_URL + id);
         const parsed = await res.json()
-        return parsed
+        if(Object.keys(parsed).length)return parsed;
+        throw new NotFoundException(`ID no existente`)
     }
 
     //Crea un nuevo libro
