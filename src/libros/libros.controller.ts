@@ -19,9 +19,9 @@ export class LibrosController {
     }
 
     @Post()
-    async crearLibro(@Body() body: Promise<Libro>){
-        const libro: Libro = await body;
-        return this.librosService.createLibro(libro)
+    async crearLibro(@Body() body): Promise<any>{
+
+        return this.librosService.createLibro(body)
     }
 
     @Delete("/:id")

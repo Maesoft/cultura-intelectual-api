@@ -1,0 +1,31 @@
+body{
+    padding: 10px;
+}
+/******************/
+.tablePro {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.thPro, .tdPro {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.thPro {
+    background-color: #f2f2f2;
+}
+
+.trPro:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.imagenLibro {
+    width: 50px;
+    height: 50px;
+}
+
+.tdi{
+    width: 140px;
+}

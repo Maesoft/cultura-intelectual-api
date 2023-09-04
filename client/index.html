@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    <p>Test</p>
+    <h1>Logo</h1>
+  
+    <p>Crear nuevo producto</p>
+        <form>
+            <table class="tablePro">
+                <thead>
+                    <tr class="trPro">
+                        <th class="thPro">Imagen</th>
+                        <th class="thPro">Título</th>
+                        <th class="thPro">Autor</th>
+                        <th class="thPro">Lugar de Impresión</th>
+                        <th class="thPro">Fecha de Impresión</th>
+                        <th class="thPro">Editorial</th>
+                        <th class="thPro">Colección</th>
+                        <th class="thPro">Precio</th>
+                        <th class="thPro">Ventas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="trInp" >
+                        <td ><input class="tdi" type="text" id="imagen"  required></td>
+                        <td ><input class="tdi" type="text" id="titulo" required></td>
+                        <td ><input class="tdi" type="text" id="autor" required></td>
+                        <td ><input class="tdi" type="text" id="lugar_de_impresion" required></td>
+                        <td ><input class="tdi" type="text" id="fecha_de_impresion" required></td>
+                        <td ><input class="tdi" type="text" id="editorial" required></td>
+                        <td ><input class="tdi" type="text" id="coleccion" required></td>
+                        <td ><input class="tdi" type="number" id="precio" required></td>
+                        <td ><input class="tdi" type="number" id="ventas" value="0" readonly></td>
+                        <td class="tdi">  <button type="submit" id="btnNew">Chec</button></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </form>
+            
+        <p>Productos</p>
+    <table class="tablePro">
+        <thead>
+            <tr class="trPro">
+                <th class="thPro">Imagen</th>
+                <th class="thPro">Título</th>
+                <th class="thPro">Autor</th>
+                <th class="thPro">Lugar de Impresión</th>
+                <th class="thPro">Fecha de Impresión</th>
+                <th class="thPro">Editorial</th>
+                <th class="thPro">Colección</th>
+                <th class="thPro">Precio</th>
+                <th class="thPro">Ventas</th>
+                <th class="thPro">ID</th>
+            </tr>
+        </thead>
+        <tbody id="contenedor">
+        </tbody>
+    </table>
+    <script src="./app.js"></script>
 </body>
 </html>

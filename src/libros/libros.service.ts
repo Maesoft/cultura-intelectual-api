@@ -32,7 +32,8 @@ export class LibrosService {
     //Crea un nuevo libro
     async createLibro(libro:Libro){
         const id = await this.setId();
-        const nuevoLibro = {...libro, id}
+        const {titulo, autor,lugar_de_impresion,fecha_de_impresion,editorial,coleccion,precio,ventas,imagen}= libro
+        const nuevoLibro = {id, titulo, autor,lugar_de_impresion,fecha_de_impresion,editorial,coleccion,precio,ventas,imagen}    
         const res = await fetch(BASE_URL,{
             method:'POST',
             headers:{
