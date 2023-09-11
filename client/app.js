@@ -25,7 +25,8 @@ function crearCartas(dato) {
     <td class="tdPro">${dato.precio}</td>
     <td class="tdPro">${dato.ventas}</td>
     <td class="tdPro">${dato.id}</td>
-    <td class="tdPro"> <button>X</button> <button>Edit</button></td>
+    <td class="tdPro"> <button onclick="borrar(${dato.id})">X</button>
+     <button onclick="edit(${dato.id})">Edit</button></td>
     </tr>
     `;
 }
@@ -58,7 +59,7 @@ form.addEventListener("submit",e =>{
    
     if(newLibro.autor =="" || newLibro.titulo ==""|| newLibro.lugar_de_impresion =="" 
     || newLibro.fecha_de_impresion =="" || newLibro.editorial=="" || newLibro.coleccion==""  ){
-        console.log("no")
+        console.log("No se creo el elemento ")
     }else{
         fetch("http://localhost:3000/libros/",{
                 method:"POST",
@@ -71,5 +72,15 @@ form.addEventListener("submit",e =>{
     }
     });
             
+
+    function borrar (id){
+        fetch(`http://localhost:3000/libros/${id}`,{
+            method:"DELETE",
+            })
+            .then(res => res.json())
+            .then(data =>setTimeout(()=>{location.reload();},1000))
+            .catch(err =>console.log(err))
+            
+    }    
   
 

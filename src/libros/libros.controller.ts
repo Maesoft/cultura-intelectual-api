@@ -1,6 +1,7 @@
-import { Controller,Get,Param, Post, Body , Delete, Put, Query} from '@nestjs/common';
+import { Controller,Get,Param, Post, Body , Delete, Query, ParseIntPipe, Put, HttpCode} from '@nestjs/common';
 import { LibrosService } from './libros.service';
-import { Libro } from 'src/libro/libro';
+import { LibroDTO } from './libro.dto';
+
 
 
 @Controller('libros')
@@ -8,20 +9,19 @@ export class LibrosController {
     constructor(private readonly librosService: LibrosService) {}
 
     @Get()
-      getLibros(@Query ("libro") titulo:string): Promise<Libro[]>{
+      getLibros(@Query ("libro") titulo:string): Promise<any[]>{
         if(!titulo) return this.librosService.getLibros();
         return this.librosService.getLibroPorTitulo(titulo)
     }
 
     @Get("/:id")
-    getLibrosById( @Param("id") id:number): Promise <Libro>{
+    getLibrosById( @Param("id", ParseIntPipe) id:number): Promise <any>{
         return this.librosService.getLibroById(id)
     }
 
     @Post()
-    async crearLibro(@Body() body): Promise<any>{
-
-        return this.librosService.createLibro(body)
+    crearLibro(@Body() libroDto:LibroDTO): Promise<any>{
+        return this.librosService.createLibro(libroDto)
     }
 
     @Delete("/:id")
@@ -29,8 +29,10 @@ export class LibrosController {
         return this.librosService.eliminarLibroById(id)
     }
 
-    @Put('/:id')
-    actualizarLibroById(@Param('id') id:number, @Body() body ): Promise<void>{
-        return this.librosService.actualizarLibroById(id,body)
+    @Put(':id')
+    @HttpCode(204)
+    update(@Param('id') id: number, @Body() body): Promise<void>{
+        return this.librosService.actualizarLibroById(id, body)
     }
-}
+  }
+

@@ -5,7 +5,7 @@ import { LibrosController } from './libros/libros.controller';
 import { LibrosService } from './libros/libros.service';
 
 @Module({
-  imports: [ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),],
+  imports: [ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client'), serveRoot:"/", }),],
   controllers: [ LibrosController],
   providers: [ LibrosService],
 })
