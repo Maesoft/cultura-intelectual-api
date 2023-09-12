@@ -1,52 +1,15 @@
 {
   "libros": [
     {
-      "id": 1,
-      "titulo": "1984",
-      "autor": "George Orwell",
-      "lugar_de_impresion": "Londres",
-      "fecha_de_impresion": "8 de junio de 1949",
-      "editorial": "Secker & Warburg",
-      "coleccion": "Ficción distópica",
-      "precio": 1000,
-      "ventas": 0,
-      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg"
-    },
-    {
-      "titulo": "Test",
-      "autor": "Harper Lee",
-      "lugar_de_impresion": "Nueva York",
-      "fecha_de_impresion": "11 de julio de 1960",
-      "editorial": "J. B. Lippincott & Co.",
-      "coleccion": "Novela contemporánea",
-      "precio": 3000,
-      "ventas": 5,
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDHyjTHPXpo-EG3phz8F9y6Q1TORRTuqucmh8xNeeNGKQjW_HNi362vvg7bbaMUo543I0&usqp=CAU",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "titulo": "Matar a un ruiseñor",
-      "autor": "Harper Lee",
-      "lugar_de_impresion": "Nueva York",
-      "fecha_de_impresion": "11 de julio de 1960",
-      "editorial": "J. B. Lippincott & Co.",
-      "coleccion": "Novela contemporánea",
-      "precio": 3000,
-      "ventas": 0,
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDHyjTHPXpo-EG3phz8F9y6Q1TORRTuqucmh8xNeeNGKQjW_HNi362vvg7bbaMUo543I0&usqp=CAU"
-    },
-    {
-      "id": 4,
       "titulo": "Don Quijote de la Mancha",
       "autor": "Miguel de Cervantes",
-      "lugar_de_impresion": "Madrid",
-      "fecha_de_impresion": "16 de enero de 1605",
+      "lugar_de_impresion": "jujuy",
+      "fecha_de_impresion": "16 de enero de 1605as ",
       "editorial": "Francisco de Robles",
-      "coleccion": "Novela de caballerías",
+      "coleccion": "Novela de caballerías 0",
       "precio": 1800,
       "ventas": 0,
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgtsMMSI_4qO8nsLoyk-QYWb1omzEO14LvvGFU2rjTaOC9SriBzpG5Tm9i-_LKJZv4WIE&usqp=CAU"
+      "id": 4
     },
     {
       "id": 5,
@@ -97,51 +60,16 @@
       "id": 8
     },
     {
-      "titulo": 10,
-      "autor": "George Orwell",
-      "lugar_de_impresion": "Londres",
-      "fecha_de_impresion": "8 de junio de 1949",
-      "editorial": "Secker & Warburg",
-      "coleccion": 20,
-      "precio": 1000,
+      "titulo": "asdf",
+      "autor": "asdf",
+      "lugar_de_impresion": "asdf",
+      "fecha_de_impresion": "asdf",
+      "editorial": "asdf",
+      "coleccion": "asdf",
+      "precio": 50,
       "ventas": 0,
-      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg",
+      "imagen": "data:image/png;base64,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",
       "id": 9
-    },
-    {
-      "titulo": 10,
-      "autor": "George Orwell",
-      "lugar_de_impresion": "Londres",
-      "fecha_de_impresion": "8 de junio de 1949",
-      "editorial": "Secker & Warburg",
-      "coleccion": 20,
-      "precio": 1000,
-      "ventas": 0,
-      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg",
-      "id": 10
-    },
-    {
-      "titulo": 10,
-      "autor": "George Orwell",
-      "lugar_de_impresion": "Londres",
-      "fecha_de_impresion": "8 de junio de 1949",
-      "editorial": "Secker & Warburg",
-      "coleccion": 20,
-      "precio": 1000,
-      "ventas": 0,
-      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg",
-      "id": 11
-    },
-    {
-      "titulo": 10,
-      "autor": "George Orwell",
-      "lugar_de_impresion": "Londres",
-      "editorial": "Secker & Warburg",
-      "coleccion": 20,
-      "precio": 1000,
-      "ventas": 0,
-      "imagen": "https://puntoed.com.ar/img/libros/2348-1984-20230201190237.jpg",
-      "id": 12
     }
   ]
 }

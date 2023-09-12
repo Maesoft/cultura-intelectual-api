@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { BadRequestException, NotFoundException } from '@nestjs/common/exceptions';
-import { LibroDTO } from './libro.dto';
+import { LibroDto } from './dto/libro.dto';
 const BASE_URL = 'http://localhost:3030/libros/'
 
 @Injectable()
@@ -13,7 +13,7 @@ export class LibrosService {
         return parsed
     }
      //Muestra el libro por llamada
-     async getLibroPorTitulo (titulo:string) : Promise<LibroDTO[]>{
+     async getLibroPorTitulo (titulo:string) : Promise<LibroDto[]>{
         const res = await fetch(BASE_URL);
         const parsed = await res.json()
         const libroEncontrado = parsed.find(libro => libro.titulo.toLocaleLowerCase() === titulo.toLocaleLowerCase());
@@ -22,7 +22,7 @@ export class LibrosService {
      }
 
     //Muestra el libro por id
-    async getLibroById(id:number): Promise<LibroDTO>{
+    async getLibroById(id:number): Promise<LibroDto>{
         const res = await fetch(BASE_URL + id);
         const parsed = await res.json()
         if(Object.keys(parsed).length)return parsed;
@@ -30,9 +30,20 @@ export class LibrosService {
     }
 
     //Crea un nuevo libro
-    async createLibro(libroDto:LibroDTO): Promise<any>{
+    async createLibro(libroDto:LibroDto){
         const id = await this.setId();
-        const nuevoLibro = {...libroDto, id}    
+        const nuevoLibro = {
+                titulo: libroDto.titulo ,
+                autor: libroDto.autor ,
+                lugar_de_impresion: libroDto.lugar_de_impresion ,
+                fecha_de_impresion: libroDto.fecha_de_impresion ,
+                editorial: libroDto.editorial ,
+                coleccion: libroDto.coleccion ,
+                precio: libroDto.precio ,
+                ventas: libroDto.ventas ,
+                imagen: libroDto.imagen ,
+                id: id
+        }    
         const res = await fetch(BASE_URL,{
             method:'POST',
             headers:{
@@ -50,6 +61,7 @@ export class LibrosService {
         const id = libros.pop().id + 1;
         return id
     }
+    
 
     //Elimina el libro segun el ID
     async eliminarLibroById(id:number){
@@ -61,19 +73,19 @@ export class LibrosService {
     }
 
     //Actualizar el libro segun el ID
-    async actualizarLibroById(id: number, body: LibroDTO): Promise<void> {
+    async actualizarLibroById(id: number, libroDto: LibroDto): Promise<void> {
         const isLibro = await this.getLibroById(id);
         if (!Object.keys(isLibro).length) return;
         const actualizarLibro = {
-          titulo: body.titulo ,
-          autor: body.autor ,
-          lugar_de_impresion: body.lugar_de_impresion ,
-          fecha_de_impresion: body.fecha_de_impresion ,
-          editorial: body.editorial ,
-          coleccion: body.coleccion ,
-          precio: body.precio ,
-          ventas: body.ventas ,
-          imagen: body.imagen ,
+          titulo: libroDto.titulo ,
+          autor: libroDto.autor ,
+          lugar_de_impresion: libroDto.lugar_de_impresion ,
+          fecha_de_impresion: libroDto.fecha_de_impresion ,
+          editorial: libroDto.editorial ,
+          coleccion: libroDto.coleccion ,
+          precio: libroDto.precio ,
+          ventas: libroDto.ventas ,
+          imagen: libroDto.imagen ,
         };
     
        await fetch(BASE_URL + id, {

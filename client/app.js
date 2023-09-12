@@ -14,7 +14,7 @@ fetch("http://localhost:3000/libros")
 function crearCartas(dato) {
     contenedor.innerHTML +=
     `
-    <tr class="trPro">
+    <tr class="trPro" id="${dato.id}">
     <td class="tdPro"><img class="imagenLibro" src=${dato.imagen} alt="Portada del libro"></td>
     <td class="tdPro">${dato.titulo}</td>
     <td class="tdPro">${dato.autor}</td>
@@ -84,3 +84,59 @@ form.addEventListener("submit",e =>{
     }    
   
 
+// Agrega esta función para editar una fila específica
+function edit(id) {
+    const row = document.getElementById(`${id}`);
+    const cells = row.querySelectorAll(".tdPro");
+  
+    // Almacena los valores actuales en variables
+    const currentValues = Array.from(cells).map(cell => cell.textContent);
+    
+    // Reemplaza el contenido de las celdas por campos de entrada
+    cells[1].innerHTML = `<input type="text" value="${currentValues[1]}" id="editedTitulo">`;
+    cells[2].innerHTML = `<input type="text" value="${currentValues[2]}" id="editedAutor">`;
+    cells[3].innerHTML = `<input type="text" value="${currentValues[3]}" id="editedLugarI">`;
+    cells[4].innerHTML = `<input type="text" value="${currentValues[4]}" id="editedFechaI">`;
+    cells[5].innerHTML = `<input type="text" value="${currentValues[5]}" id="editedEditorial">`;
+    cells[6].innerHTML = `<input type="text" value="${currentValues[6]}" id="editedColeccion">`;
+    cells[7].innerHTML = `<input type="number" value="${currentValues[7]}" id="editedPrecio">`;
+    cells[8].innerHTML = `<input type="number" value="${currentValues[8]}" id="editedVentas">`;
+
+    // Agrega un botón "Guardar" para confirmar la edición
+    cells[9].innerHTML = `<button onclick="saveEdit(${id})">Guardar</button>`;
+}
+
+// Agrega esta función para guardar los cambios después de editar
+function saveEdit(id) {
+   
+    const editedTitulo = document.getElementById("editedTitulo").value;
+    const editedAutor = document.getElementById("editedAutor").value;
+    const editedLugarI = document.getElementById("editedLugarI").value;
+    const editedFechaI = document.getElementById("editedFechaI").value;
+    const editedEditorial = document.getElementById("editedEditorial").value;
+    const editedColeccion = document.getElementById("editedColeccion").value;
+    const editedPrecio = document.getElementById("editedPrecio").value;
+    const editedVentas = document.getElementById("editedVentas").value;
+
+    const editedLibro = {
+        titulo: editedTitulo,
+        autor: editedAutor,
+        lugar_de_impresion: editedLugarI,
+        fecha_de_impresion: editedFechaI,
+        editorial: editedEditorial,
+        coleccion: editedColeccion,
+        precio: parseInt(editedPrecio),
+        ventas: parseInt(editedVentas),
+    };
+   
+    fetch(`http://localhost:3000/libros/${id}`, {
+        method: "PUT", 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(editedLibro),
+    })
+    .then(res => res.json())
+    .then(data => {
+       // location.reload();
+    })
+    .catch(err => console.log(err));
+}
