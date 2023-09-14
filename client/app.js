@@ -91,8 +91,9 @@ function edit(id) {
   
     // Almacena los valores actuales en variables
     const currentValues = Array.from(cells).map(cell => cell.textContent);
-    
+    const img= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDzELXzAiglM-6f_agUjPvv8DTbYduMa9W4YBPySEYDyyPrjYtTm5pzTYIxiEvgfNpl1I&usqp=CAU"
     // Reemplaza el contenido de las celdas por campos de entrada
+    cells[0].innerHTML = `<input type="text" value="${img}" id="editedImage">`;
     cells[1].innerHTML = `<input type="text" value="${currentValues[1]}" id="editedTitulo">`;
     cells[2].innerHTML = `<input type="text" value="${currentValues[2]}" id="editedAutor">`;
     cells[3].innerHTML = `<input type="text" value="${currentValues[3]}" id="editedLugarI">`;
@@ -100,7 +101,7 @@ function edit(id) {
     cells[5].innerHTML = `<input type="text" value="${currentValues[5]}" id="editedEditorial">`;
     cells[6].innerHTML = `<input type="text" value="${currentValues[6]}" id="editedColeccion">`;
     cells[7].innerHTML = `<input type="number" value="${currentValues[7]}" id="editedPrecio">`;
-    cells[8].innerHTML = `<input type="number" value="${currentValues[8]}" id="editedVentas">`;
+    cells[8].innerHTML = `<input type="number" value="${currentValues[8]}" id="editedVentas" readonly>`;
 
     // Agrega un botón "Guardar" para confirmar la edición
     cells[9].innerHTML = `<button onclick="saveEdit(${id})">Guardar</button>`;
@@ -108,7 +109,7 @@ function edit(id) {
 
 // Agrega esta función para guardar los cambios después de editar
 function saveEdit(id) {
-   
+    const editedImage = document.getElementById("editedImage").value;
     const editedTitulo = document.getElementById("editedTitulo").value;
     const editedAutor = document.getElementById("editedAutor").value;
     const editedLugarI = document.getElementById("editedLugarI").value;
@@ -127,6 +128,7 @@ function saveEdit(id) {
         coleccion: editedColeccion,
         precio: parseInt(editedPrecio),
         ventas: parseInt(editedVentas),
+        imagen:editedImage
     };
    
     fetch(`http://localhost:3000/libros/${id}`, {
@@ -135,8 +137,6 @@ function saveEdit(id) {
         body: JSON.stringify(editedLibro),
     })
     .then(res => res.json())
-    .then(data => {
-       // location.reload();
-    })
     .catch(err => console.log(err));
+    location.reload()
 }
