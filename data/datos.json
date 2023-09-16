@@ -35,6 +35,18 @@
       "ventas": 0,
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREf9oIhGmrtN8xzfxSMbIe6M-oE6b0ZxbE8A&usqp=CAU",
       "id": 8
+    },
+    {
+      "titulo": "Test 8",
+      "autor": "Marcel Proust",
+      "lugar_de_impresion": "París",
+      "fecha_de_impresion": "1913-1927",
+      "editorial": "Grasset",
+      "coleccion": "Novela modernista",
+      "precio": 4100,
+      "ventas": 0,
+      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREf9oIhGmrtN8xzfxSMbIe6M-oE6b0ZxbE8A&usqp=CAU",
+      "id": 9
     }
   ]
 }

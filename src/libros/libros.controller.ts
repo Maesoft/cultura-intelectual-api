@@ -30,13 +30,9 @@ export class LibrosController {
 
     @Post()
     @HttpCode(201)
-     async crearLibro(@Body() libroDto:LibroDto ,@Res() res): Promise<any>{
-        try {
-            const nuevoLibro = await this.librosService.createLibro(libroDto);
-            res.status(201).json(nuevoLibro);
-          } catch (error) {
-            res.status(500).json({ error: 'Error en el servidor' });
-          }
+      crearLibro(@Body() libroDto:LibroDto): Promise<any>{
+      return this.librosService.createLibro(libroDto);
+       
 
     }
 

@@ -30,31 +30,48 @@ export class LibrosService {
     }
 
     //Crea un nuevo libro
-    async createLibro(libroDto:LibroDto){
+    async createLibro(libroDto: LibroDto) {
         const id = await this.setId();
+    
+        // Define un conjunto de claves permitidas
+        const clavesPermitidas = [
+            'titulo',
+            'autor',
+            'lugar_de_impresion',
+            'fecha_de_impresion',
+            'editorial',
+            'coleccion',
+            'precio',
+            'ventas',
+            'imagen',
+            'id',
+        ];
+    
+        // Filtra las claves del objeto nuevoLibro que no están permitidas
+        const clavesNoPermitidas = Object.keys(libroDto).filter(
+            clave => !clavesPermitidas.includes(clave)
+        );
+    
+        if (clavesNoPermitidas.length > 0) {
+            throw new Error(`Elementos no permitidos en el objeto: ${clavesNoPermitidas.join(', ')}`);
+        }
+    
         const nuevoLibro = {
-                titulo: libroDto.titulo ,
-                autor: libroDto.autor ,
-                lugar_de_impresion: libroDto.lugar_de_impresion ,
-                fecha_de_impresion: libroDto.fecha_de_impresion ,
-                editorial: libroDto.editorial ,
-                coleccion: libroDto.coleccion ,
-                precio: libroDto.precio ,
-                ventas: libroDto.ventas ,
-                imagen: libroDto.imagen ,
-                id: id
-        }    
-        const res = await fetch(BASE_URL,{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json',
+            ...libroDto,
+            id: id,
+        };
+    
+        const res = await fetch(BASE_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-            body:JSON.stringify(nuevoLibro)
-        })
-        const parsed = await res.json()
-        return parsed
+            body: JSON.stringify(nuevoLibro),
+        });
+    
+        const parsed = await res.json();
+        return parsed;
     }
-
     //Crea el ID  nuevo para la libros
     private async setId(): Promise<number>{
         const libros = await this.getLibros()
