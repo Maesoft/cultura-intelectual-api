@@ -75,7 +75,11 @@ export class LibrosService {
     //Actualizar el libro segun el ID
     async actualizarLibroById(id: number, libroDto: LibroDto): Promise<void> {
         const isLibro = await this.getLibroById(id);
-        if (!Object.keys(isLibro).length) return;
+        
+        if (!Object.keys(isLibro).length) {
+            throw new NotFoundException(`Libro con ID ${id} no encontrado`);
+        }
+
         const actualizarLibro = {
           titulo: libroDto.titulo ,
           autor: libroDto.autor ,

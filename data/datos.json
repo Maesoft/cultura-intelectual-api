@@ -1,18 +1,6 @@
 {
   "libros": [
     {
-      "titulo": "Crimen y castigo",
-      "autor": "Fyodor Dostoevsky",
-      "lugar_de_impresion": "San Petersburgo",
-      "fecha_de_impresion": "1866",
-      "editorial": "Editorial El Mensajero Ruso",
-      "coleccion": "Novela clásica",
-      "precio": 3500,
-      "ventas": 10,
-      "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDzELXzAiglM-6f_agUjPvv8DTbYduMa9W4YBPySEYDyyPrjYtTm5pzTYIxiEvgfNpl1I&usqp=CAU",
-      "id": 5
-    },
-    {
       "id": 6,
       "titulo": "Orgullo y prejuicio",
       "autor": "Jane Austen",
@@ -37,7 +25,7 @@
       "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVZM9E574niIwAAKvSrLPdnXZYB3Xj06ho7A&usqp=CAU"
     },
     {
-      "titulo": "En busca del tiempo perdido",
+      "titulo": "Test 1",
       "autor": "Marcel Proust",
       "lugar_de_impresion": "París",
       "fecha_de_impresion": "1913-1927",
